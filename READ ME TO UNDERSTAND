@@ -1,4 +1,6 @@
-Steps for copying my skripsie (Human-Aware Surgical Nursing Cell)
+Steps for copying my skripsie collision avoidance simulation (Human-Aware Surgical Nursing Cell Proof-of-Concept)
+
+READ ALL OF THIS BEFORE GETTING STARTED!!!!!!!
 
 First, download virtual box and follow the 3 virtualbox installation videos on the youtube channel called Learn Robotics With Ros. The videos show you how to install linux on a virtual machine, as well as showing how to download ROS noetic 
 and how to configure a catkin workspace. MAKE SURE TO ALLOCATE A LOT OF MEMORY, I have allocated 100GB for later downloads such as configuring a real camera
@@ -34,3 +36,7 @@ Once this has happened and the move has been completed, open a new terminal and 
 this starts the motion planning and execution for the robot. Instead of planning one big path with one check, the robot moves in increments and checks the environment after every small move which makes the collision avoidance more dynamic instead of static.
 furthermore, I used joint control instead of cartesian coordinates for the travel path in order to avoid unpredictable movements. The robot cannot really check for collisions while moving. 
 The use of joint control forces only selected joints to move at a time and stops unwanted movements from certain joints.
+Note that running this on a laptop can be quite slow. 
+
+I would recommend implementing this whole virtual setup on a desktop PC with a dedicated linux operating system. I would not recommend using WSL 2 on windows as it provided issues when 
+downloading certain packages, but the concept can still be proven using a virtual machine with a laptop.
