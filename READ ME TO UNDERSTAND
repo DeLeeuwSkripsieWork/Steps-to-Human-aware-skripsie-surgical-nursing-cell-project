@@ -1,0 +1,20 @@
+Steps for copying my skripsie (Human-Aware Surgical Nursing Cell)
+
+First, download virtual box and follow the 3 virtualbox installation videos on the youtube channel called Learn Robotics With Ros. The videos show you how to install linux on a virtual machine, as well as showing how to download ROS noetic 
+and how to configure a catkin workspace. MAKE SURE TO ALLOCATE A LOT OF MEMORY, I have allocated 100GB for later downloads such as configuring a real camera
+here is the link to their channel https://www.youtube.com/@learn-robotics-with-ros
+
+Once you have completed this installation, Install Moveit for ROS NOETIC in your SRC folder, make sure that you download packages that are suitable for ubuntu 20.04 and ROS Noetic, otherwise you will experience trouble later on.
+
+Next, install the universal robots https://github.com/ros-industrial/universal_robot in your src folder using "git clone https://github.com/ros-industrial/universal_robot"
+
+Next install the follwoing using git clone in your SRC folder: 
+https://github.com/roboticsgroup/roboticsgroup_gazebo_plugins
+https://github.com/JenniferBuehler/gazebo-pkgs
+https://github.com/JenniferBuehler/general-message-pkgs
+
+then install all the ros controllers using: 
+sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
+sudo apt-get install ros*controller*
+
+Next, install the 4 repositories on my page. 
