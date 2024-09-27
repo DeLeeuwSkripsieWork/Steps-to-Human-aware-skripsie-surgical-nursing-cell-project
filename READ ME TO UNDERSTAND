@@ -2,11 +2,13 @@ Steps for copying my skripsie collision avoidance simulation (Human-Aware Surgic
 
 READ ALL OF THIS BEFORE GETTING STARTED!!!!!!!
 
-First, download virtual box and follow the 3 virtualbox installation videos on the youtube channel called Learn Robotics With Ros. The videos show you how to install linux on a virtual machine, as well as showing how to download ROS noetic 
+First, download virtual box and follow the 3 virtualbox installation videos on the youtube channel called Learn Robotics With Ros. The videos show you how to install linux on a virtual machine, 
+as well as showing how to download ROS noetic 
 and how to configure a catkin workspace. MAKE SURE TO ALLOCATE A LOT OF MEMORY, I have allocated 100GB for later downloads such as configuring a real camera
 here is the link to their channel https://www.youtube.com/@learn-robotics-with-ros
 
-Once you have completed this installation, Install Moveit for ROS NOETIC in your SRC folder, make sure that you download packages that are suitable for ubuntu 20.04 and ROS Noetic, otherwise you will experience trouble later on.
+Once you have completed this installation, Install Moveit for ROS NOETIC in your SRC folder, make sure that you download packages that are suitable for ubuntu 20.04 and ROS Noetic, 
+otherwise you will experience trouble later on.
 
 Next, install the universal robots https://github.com/ros-industrial/universal_robot in your src folder using "git clone https://github.com/ros-industrial/universal_robot"
 
@@ -19,7 +21,7 @@ then install all the ros controllers using:
 sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
 sudo apt-get install ros*controller*
 
-Next, install the 4 repositories on my page. Don'tt download this file or repo.
+Next, install the 4 repositories on my page. Don't download this file or repo.
 
 clone this repository from LearnRoboticsWROS into your src file https://github.com/LearnRoboticsWROS/position_tracker
 
@@ -30,10 +32,12 @@ start roscore in a terminal
 open a new terminal and type: roslaunch ur_app_youtube spawn_ur5e_eff_controller.launch
 this will spawn the world, as well as the UR5e, its camera and the robot's controllers. you can then insert extra objects to the planning scene. Press play in gazebo when you are ready.
 
-Pressing play will then allow Rviz to also open. you will see the UR5e robot and the generated octomap. Towards the bottom of Rviz, there is a robot start and robot end state feature. for robot end state, select start then click plan and execute.
+Pressing play will then allow Rviz to also open. you will see the UR5e robot and the generated octomap. Towards the bottom of Rviz, there is a robot start and robot end state feature. 
+for robot end state, select start then click plan and execute.
 
 Once this has happened and the move has been completed, open a new terminal and type: rosrun cobot_IK ur5e_algorithm_rotate_skripsie1.cpp
-this starts the motion planning and execution for the robot. Instead of planning one big path with one check, the robot moves in increments and checks the environment after every small move which makes the collision avoidance more dynamic instead of static.
+this starts the motion planning and execution for the robot. Instead of planning one big path with one check, the robot moves in increments and checks the environment after every small 
+move which makes the collision avoidance more dynamic instead of static.
 furthermore, I used joint control instead of cartesian coordinates for the travel path in order to avoid unpredictable movements. The robot cannot really check for collisions while moving. 
 The use of joint control forces only selected joints to move at a time and stops unwanted movements from certain joints.
 Note that running this on a laptop can be quite slow. 
